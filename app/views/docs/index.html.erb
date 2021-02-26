@@ -1,0 +1,28 @@
+<center>
+<div style="height:auto;width:60%;margin-top:5%;border:2px solid grey;border-radius:5%" class="bg-light">
+                <h2 class="pt-4 text-center "><b>Documents</b></h2>
+                <hr>
+                    <table class="table table-stripped table-hover table-bordered">
+            <tr class="table-danger">       
+            <td><b>No.</b></td>            
+            <td><b>Document Name</b></td>
+            <td><b>Document Id</b></td>
+            <td><b>Document Type</b></td>
+            </tr>
+            <%i=1%>
+             <%@doc.each do |room|%> 
+            <tr>
+            <td><b><%=i%></b></td>    
+            <td><b><%=room.documentname%></b></td>
+            <td><b><%=room.documentid%></b></td>
+            <td><b><%=room.documentype%></b></td>
+            <%i+=1%>
+            <td><center><b><%= link_to 'Edit', edit_doc_path(room.id), method: :put %></b></center></td>
+
+            </tr>
+            <%end%>             
+                    </table>
+            <td><center><b><button class="btn btn-success"><%= link_to 'Add more documents', new_doc_path, method: :put %></b></button></a></b></center></td>
+            </div>
+</div>
+</center> 

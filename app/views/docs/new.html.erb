@@ -1,0 +1,17 @@
+<h1 class="col text-center font-weight-light display-4">Submit Documents</h1>
+
+
+<%= form_for @user,url:docs_path ,method:'post',class:'form-group' do |f|%><br>
+<%=f.text_field :documentname, placeholder:'Enter Document Name',class:'form-control w-50 mx-auto'%>
+
+ <center> <b class="text-danger"><%=@user.errors[:documentname].to_sentence%></b></center><br>
+<%=f.text_field :documentid, placeholder:'Enter Document Id',class:'form-control w-50 mx-auto'%>
+
+ <center> <b class="text-danger"><%=@user.errors[:documentid].to_sentence%></b></center><br>
+<%=f.text_field :documentype, placeholder:'Enter Document Type',class:'form-control w-50 mx-auto'%>
+
+ <center> <b class="text-danger"><%=@user.errors[:documentype].to_sentence%></b></center><br>
+<%=f.submit 'submit',class:'form-control w-50 mx-auto'%>
+
+<%end%>
+

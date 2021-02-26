@@ -1,0 +1,48 @@
+<%= form_for @user, url:home_index_path, method:'post',class:'form-group' do |f| %>
+<br><br>
+  <h1 style="text-align:center">Sign up</h1>
+
+<div class='row container mx-auto w-50'>
+    <div class='col-6'>
+        
+        <%=f.text_field :firstname, class:'form-control  mx-auto',placeholder:'First Name'%>
+        <center><b class="text-danger"><%=@user.errors[:firstname].to_sentence%></b></center>
+    </div>
+
+    <div class='col-6'>
+        <%=f.text_field :lastname, class:'form-control  mx-auto',placeholder:'Last Name'%> <br>
+        <center><b class="text-danger"><%=@user.errors[:lastname].to_sentence%></b></center>
+    </div>    
+</div>
+<div class='row container mx-auto'>  
+  <div class='col'>
+  <%=f.text_field :phoneno, class:'form-control w-50 mx-auto',placeholder:'Phone No' %>
+   <center><b class="text-danger"><%=@user.errors[:phoneno].to_sentence%><center></b><br>
+  </div>
+</div>
+<div class='row container mx-auto'>
+  <div class='col'>
+  <%=f.text_field :email, class:'form-control w-50 mx-auto',placeholder:'E-mail'%>
+   <center><b class="text-danger"><%=@user.errors[:email].to_sentence%></b></center><br>
+  </div>
+</div>
+<div class='row container mx-auto'>
+  <div class='col'>
+  <%=f.text_field :password, class:'form-control w-50 mx-auto',placeholder:'Password'%> 
+  <center><b class="text-danger"><%=@user.errors[:password].to_sentence%></b></center><br>
+  </div>
+</div>
+<div class='row container mx-auto'>
+  <div class='col'>
+  <%=f.text_field :aadhar, class:'form-control w-50 mx-auto',placeholder:'Aadhar'%>
+  <center> <b class="text-danger"><%=@user.errors[:aadhar].to_sentence%></b></center>
+  <br>
+  </div>
+</div>
+<div claas="row container mx-auto w-50">
+    <div class="col">
+    <%=f.submit 'Sign Up',class:'form-control w-50  mx-auto'%>
+    </div>
+</div>
+
+<% end %>

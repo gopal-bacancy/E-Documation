@@ -1,0 +1,6 @@
+<%= form_for @user,url:doc_path ,method:'patch',class:'form-group' do |f|%><br>
+<%=f.text_field :documentname, placeholder:'Enter Document Name',class:'form-control w-50 mx-auto'%><br>
+<%=f.text_field :documentid, placeholder:'Enter Document Id',class:'form-control w-50 mx-auto'%><br>
+<%=f.text_field :documentype, placeholder:'Enter Document Type',class:'form-control w-50 mx-auto'%><br>
+<%=f.submit 'submit',class:'form-control w-50 mx-auto'%>
+<%end%>
